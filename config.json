@@ -1,0 +1,9 @@
+﻿{
+  "mysql": {
+    "address": "here your address",
+    "database": "here your database",
+    "password": "password",
+    "port": "3306",
+    "user": "here your user"
+  }
+}
