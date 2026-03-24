@@ -73,6 +73,7 @@
             loginButton.TabIndex = 3;
             loginButton.Text = "Войти";
             loginButton.UseVisualStyleBackColor = true;
+            loginButton.Click += loginButton_Click;
             // 
             // guestButton
             // 
@@ -107,6 +108,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "Auth";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Авторизация";
             ResumeLayout(false);
             PerformLayout();
