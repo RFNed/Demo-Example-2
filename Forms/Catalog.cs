@@ -14,9 +14,12 @@ namespace Demo_Example_2.Forms
 {
     public partial class Catalog : Form
     {
-        private string? name;
-        private int? role;
-        private string? roleName;
+        private string name;
+        private int role;
+        private string roleName;
+
+        
+
         public Catalog(string name, int role, string roleName)
         {
             InitializeComponent();
@@ -28,12 +31,12 @@ namespace Demo_Example_2.Forms
             LoadItems();
 
         }
-
+        
         public void LoadItems()
         {
 
             itemList.Controls.Clear();
-
+            #region <Items While Iteration>
             using (Database db = new((new JSONReader()).Reading()))
             {
 
@@ -150,6 +153,8 @@ namespace Demo_Example_2.Forms
 
 
         }
+
+        #endregion
 
         private void Redact(object sender, EventArgs e)
         {
