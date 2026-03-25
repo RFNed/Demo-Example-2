@@ -30,6 +30,7 @@
         {
             GreetLabel = new Label();
             itemList = new FlowLayoutPanel();
+            button1 = new Button();
             SuspendLayout();
             // 
             // GreetLabel
@@ -44,20 +45,31 @@
             // 
             // itemList
             // 
-            itemList.Anchor = AnchorStyles.None;
             itemList.AutoScroll = true;
-            itemList.FlowDirection = FlowDirection.TopDown;
+            itemList.BackColor = Color.Gainsboro;
             itemList.Location = new Point(12, 161);
             itemList.Name = "itemList";
+            itemList.Padding = new Padding(14);
             itemList.Size = new Size(804, 281);
             itemList.TabIndex = 1;
             itemList.TabStop = true;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(51, 450);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 2;
+            button1.Text = "Обновить";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Catalog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(828, 485);
+            Controls.Add(button1);
             Controls.Add(itemList);
             Controls.Add(GreetLabel);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -73,5 +85,6 @@
 
         private Label GreetLabel;
         private FlowLayoutPanel itemList;
+        private Button button1;
     }
 }
