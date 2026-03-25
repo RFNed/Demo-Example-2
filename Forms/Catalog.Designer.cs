@@ -31,6 +31,7 @@
             GreetLabel = new Label();
             itemList = new FlowLayoutPanel();
             button1 = new Button();
+            LeaveButton = new Button();
             SuspendLayout();
             // 
             // GreetLabel
@@ -56,7 +57,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(51, 450);
+            button1.Location = new Point(12, 450);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 2;
@@ -64,11 +65,22 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // LeaveButton
+            // 
+            LeaveButton.Location = new Point(741, 450);
+            LeaveButton.Name = "LeaveButton";
+            LeaveButton.Size = new Size(75, 23);
+            LeaveButton.TabIndex = 2;
+            LeaveButton.Text = "Выход";
+            LeaveButton.UseVisualStyleBackColor = true;
+            LeaveButton.Click += Button_Leave;
+            // 
             // Catalog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(828, 485);
+            Controls.Add(LeaveButton);
             Controls.Add(button1);
             Controls.Add(itemList);
             Controls.Add(GreetLabel);
@@ -86,5 +98,6 @@
         private Label GreetLabel;
         private FlowLayoutPanel itemList;
         private Button button1;
+        private Button LeaveButton;
     }
 }

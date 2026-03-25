@@ -39,7 +39,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Times New Roman", 18F, FontStyle.Bold);
             label1.Location = new Point(100, 59);
             label1.Name = "label1";
             label1.Size = new Size(154, 26);
@@ -83,6 +83,7 @@
             guestButton.TabIndex = 4;
             guestButton.Text = "Гость";
             guestButton.UseVisualStyleBackColor = true;
+            guestButton.Click += guestButton_Click;
             // 
             // exitButton
             // 

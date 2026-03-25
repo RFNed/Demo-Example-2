@@ -14,8 +14,8 @@ namespace Demo_Example_2
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //Application.Run(new aboutbox());
-            Application.Run(new Catalog("123", 1, "333"));
-            //Application.Run(new Auth());
+            //Application.Run(new Catalog("123", 1, "333"));
+            Application.Run(new Auth());
         }
     }
 }

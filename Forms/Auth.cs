@@ -40,20 +40,31 @@ namespace Demo_Example_2
                 MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
-                    
+
                     reader.Read();
                     string name = reader.GetString("usersName");
                     string roleName = reader.GetString("roleName");
                     int roleId = reader.GetInt32("role_id");
                     Catalog catalog_form = new(name, roleId, roleName);
-                    
+
                     this.Hide();
 
                     catalog_form.Show();
-                    
+
 
                 }
+                else
+                {
+                    MessageBox.Show("Логин/Пароль введены неверно", "Ошибка", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Stop);
+                }
             }
+        }
+
+        private void guestButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Catalog catalog_form = new("Гость", 7, "Гость");
+            catalog_form.Show();
         }
     }
 }

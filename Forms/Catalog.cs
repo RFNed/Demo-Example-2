@@ -14,18 +14,18 @@ namespace Demo_Example_2.Forms
 {
     public partial class Catalog : Form
     {
-        private string name;
-        private int role;
-        private string roleName;
+        private string UserName;
+        private int UserRole;
+        private string UserRoleName;
 
         
 
         public Catalog(string name, int role, string roleName)
         {
             InitializeComponent();
-            name = name;
-            role = role;
-            roleName = roleName;
+            UserName = name;
+            UserRole = role;
+            UserRoleName = roleName;
 
             GreetLabel.Text += name;
             LoadItems();
@@ -130,20 +130,26 @@ namespace Demo_Example_2.Forms
 
                     panel.Controls.Add(table);
 
-                    ContextMenuStrip MenuContext = new();
 
-                    ToolStripMenuItem ItemMenuRedact = new ToolStripMenuItem("Редактировать");
-                    ItemMenuRedact.Image = SystemIcons.Shield.ToBitmap();
-                    ItemMenuRedact.Click += Redact;
-                    ToolStripMenuItem ItemMenuDelete = new ToolStripMenuItem("Удалить");
-                    ItemMenuDelete.Image = SystemIcons.Hand.ToBitmap();
-                    ItemMenuDelete.Click += Delete;
+                    if (UserRole == 2 || UserRole == 5)
+                    {
+                        ContextMenuStrip MenuContext = new();
+
+                        ToolStripMenuItem ItemMenuRedact = new ToolStripMenuItem("Редактировать");
+                        ItemMenuRedact.Image = SystemIcons.Shield.ToBitmap();
+                        ItemMenuRedact.Click += Redact;
+                        ToolStripMenuItem ItemMenuDelete = new ToolStripMenuItem("Удалить");
+                        ItemMenuDelete.Image = SystemIcons.Hand.ToBitmap();
+                        ItemMenuDelete.Click += Delete;
 
 
-                    MenuContext.Items.Add(ItemMenuRedact);
-                    MenuContext.Items.Add(ItemMenuDelete);
+                        MenuContext.Items.Add(ItemMenuRedact);
+                        MenuContext.Items.Add(ItemMenuDelete);
 
-                    panel.ContextMenuStrip = MenuContext;
+                        panel.ContextMenuStrip = MenuContext;
+                    }
+
+
 
                     itemList.Controls.Add(panel);
                 }
@@ -173,6 +179,12 @@ namespace Demo_Example_2.Forms
             LoadItems();
             itemList.Visible = true;
             this.Cursor = Cursors.Default;
+        }
+        private void Button_Leave(object sender, EventArgs e)
+        {
+            this.Hide();
+            Auth auth_window = new();
+            auth_window.Show();
         }
     }
 }
